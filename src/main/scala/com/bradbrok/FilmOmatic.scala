@@ -5,8 +5,8 @@ package com.bradbrok
   */
 
 object FilmOmatic extends App {
-  override def main (args: Array[String]): Unit = {
-    while(true){
+  override def main(args: Array[String]): Unit = {
+    while (true) {
       //do nothing for now
       Thread.sleep(1000)
     }
