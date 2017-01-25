@@ -1,4 +1,6 @@
-/.idea
-.iml
-/project
-/target
+.idea/
+*.iml
+project/
+target/
+*.swp
+.DST_Store
