@@ -2,8 +2,8 @@ name := "FilmOmatic"
 
 version := "1.0"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.11.8"
 
-libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.102-R11"
+libraryDependencies += "com.typesafe.akka" %% "akka-agent" % "2.4.17"
 
-mainClass := Some("Hi")
+libraryDependencies += "com.pi4j" % "pi4j-gpio-extension" % "1.1"
