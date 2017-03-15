@@ -1,7 +1,7 @@
 package com.bradbrok.filmomatic
 
-import com.bradbrok.filmomatic.Bath._
-import com.bradbrok.filmomatic.State._
+import com.bradbrok.filmomatic.state.Bath._
+import com.bradbrok.filmomatic.state.State._
 import com.bradbrok.filmomatic.JobIdActor.JobId
 
 import scala.concurrent.duration._

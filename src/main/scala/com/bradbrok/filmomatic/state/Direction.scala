@@ -1,4 +1,4 @@
-package com.bradbrok.filmomatic
+package com.bradbrok.filmomatic.state
 
 object Direction extends Enumeration {
   type Direction = Value

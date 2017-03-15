@@ -1,6 +1,6 @@
-package com.bradbrok.filmomatic
+package com.bradbrok.filmomatic.state
 
-import com.bradbrok.filmomatic.Direction._
+import com.bradbrok.filmomatic.state.Direction._
 
 object State {
   sealed trait State {
@@ -30,7 +30,7 @@ object State {
   }
   case object Fill extends State {
     val direction = Some(In)
-    val canBecome = Set(Settle, Agitate, Drain)
+    val canBecome = Set(Settle, AgitateA, Drain)
   }
   case object Settle extends State {
     val direction = None
@@ -45,7 +45,7 @@ object State {
     val canBecome = Set(Settle, Drain)
   }
   case object Drain extends State {
-    val direction = Out
+    val direction = Some(Out)
     val canBecome = Set(Idle, Fill)
   }
 }
