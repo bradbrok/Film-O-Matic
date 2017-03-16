@@ -32,7 +32,7 @@ class PlanSpec extends FlatSpec with Matchers {
     plan2.isBalanced shouldBe true
   }
 
-  "A plan that is imbalanced" should "report that it's impalanced" in {
+  "A plan that is imbalanced" should "report that it's imbalanced" in {
     val plan3 = Plan(stages = List(
       Stage(bath = Some(Bath.A), steps = List(
         Step(Waste, duration = 5 seconds),

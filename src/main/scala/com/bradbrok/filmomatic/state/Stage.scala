@@ -14,5 +14,5 @@ case class Stage(bath: Option[Bath] = None, steps: List[Step] = Nil) {
 
   def isBalanced: Boolean = durationsInDirection.filter({
     case (direction, _) => direction != Alternate
-  }).values.toSet.size == 1
+  }).values.toSet.size < 2
 }
