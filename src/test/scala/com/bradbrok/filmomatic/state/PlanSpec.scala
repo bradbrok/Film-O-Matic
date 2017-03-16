@@ -25,7 +25,7 @@ class PlanSpec extends FlatSpec with Matchers {
         Step(Fill, duration = 20 seconds),
         Step(Settle, duration = 30 seconds, temperature = Some(42)),
         Step(Agitate, duration = 10 seconds, temperature = Some(42)),
-        Step(Drain, duration = 20 seconds)
+        Step(Waste, duration = 20 seconds)
       ))
     ))
     plan.isBalanced shouldBe true
