@@ -34,7 +34,7 @@ object State {
   }
   case object Fill extends State {
     val direction = Some(In)
-    val canBecome: Set[State] = Set(Settle, Agitate)
+    val canBecome: Set[State] = Set(Settle, Agitate, Waste)
   }
   case object Settle extends State {
     val direction = None
@@ -42,7 +42,7 @@ object State {
   }
   case object Agitate extends State {
     val direction = Some(Alternate)
-    val canBecome: Set[State] = Set(Settle, Drain)
+    val canBecome: Set[State] = Set(Settle, Drain, Waste)
   }
   case object Drain extends State {
     val direction = Some(Out)
