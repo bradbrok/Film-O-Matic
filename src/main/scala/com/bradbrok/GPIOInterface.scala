@@ -42,13 +42,4 @@ class GPIOInterface {
   val pin14 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_14, "pin14")
   val pin15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, "pin15")
   val pin16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "pin16")
-
-  def setHigh(pins: List): Unit ={
-    //Need to pass a list to set each pin high.
-    for (pin <- pins) gpio.high()
-  }
-
-  def setLow(pins: List): Unit ={
-    for (pin <- pins) gpio.low()
-  }
 }
