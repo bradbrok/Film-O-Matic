@@ -19,6 +19,6 @@ class JobIdActor extends Actor {
   override def receive: Receive = {
     case request: IncrementAndGet =>
       id = id + 1
-      sender ! UniqueId(id, request)
+      sender ! UniqueJobId(id, request)
   }
 }
