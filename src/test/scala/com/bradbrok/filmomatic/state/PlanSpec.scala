@@ -18,7 +18,7 @@ class PlanSpec extends FlatSpec with Matchers {
         Step(Settle, duration = 5 seconds, temperature = Some(47)),
         Step(Agitate, duration = 5 seconds, temperature = Some(47)),
         Step(Settle, duration = 5 seconds),
-        Step(Drain, duration = 20 seconds),
+        Step(Reclaim, duration = 20 seconds),
         Step(Idle, duration = 5 seconds)
       )),
       Stage(bath = Some(Bath.B), steps = List(
