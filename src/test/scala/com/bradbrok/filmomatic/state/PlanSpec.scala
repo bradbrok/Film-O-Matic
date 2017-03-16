@@ -20,6 +20,12 @@ class PlanSpec extends FlatSpec with Matchers {
         Step(Settle, duration = 5 seconds),
         Step(Drain, duration = 20 seconds),
         Step(Idle, duration = 5 seconds)
+      )),
+      Stage(bath = Some(Bath.B), steps = List(
+        Step(Fill, duration = 20 seconds),
+        Step(Settle, duration = 30 seconds, temperature = Some(42)),
+        Step(Agitate, duration = 10 seconds, temperature = Some(42)),
+        Step(Drain, duration = 20 seconds)
       ))
     ))
     plan.isBalanced shouldBe true
