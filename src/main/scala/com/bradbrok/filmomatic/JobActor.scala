@@ -1,20 +1,21 @@
 package com.bradbrok.filmomatic
 
 import akka.actor.Actor
-import akka.actor.Actor.Receive
 import com.bradbrok.filmomatic.JobActor.Start
 import com.bradbrok.filmomatic.Message.Request
+import com.bradbrok.filmomatic.state.Plan
 
 object JobActor {
   trait Start extends Request {
-    def state: JobState
+    def plan: Plan
   }
 }
 
 class JobActor extends Actor {
-  var state = JobState(1)
+  var plan: Plan = _
 
   override def receive: Receive = {
     case start: Start =>
+      plan = start.plan
   }
 }

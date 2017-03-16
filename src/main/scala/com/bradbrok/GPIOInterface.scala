@@ -1,24 +1,6 @@
 package com.bradbrok
 
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPin;
-import com.pi4j.io.gpio.GpioPinDigitalInput;
-import com.pi4j.io.gpio.GpioPinDigitalOutput;
-import com.pi4j.io.gpio.PinDirection;
-import com.pi4j.io.gpio.PinMode;
-import com.pi4j.io.gpio.PinPullResistance;
-import com.pi4j.io.gpio.PinState;
-import com.pi4j.io.gpio.RaspiPin;
-import com.pi4j.io.gpio.trigger.GpioCallbackTrigger;
-import com.pi4j.io.gpio.trigger.GpioPulseStateTrigger;
-import com.pi4j.io.gpio.trigger.GpioSetStateTrigger;
-import com.pi4j.io.gpio.trigger.GpioSyncStateTrigger;
-import com.pi4j.io.gpio.event.GpioPinListener;
-import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
-import com.pi4j.io.gpio.event.GpioPinEvent;
-import com.pi4j.io.gpio.event.GpioPinListenerDigital;
-import com.pi4j.io.gpio.event.PinEventType;
+import com.pi4j.io.gpio.{GpioFactory, GpioPin, RaspiPin};
 
 
 /**
@@ -42,4 +24,15 @@ class GPIOInterface {
   val pin14 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_14, "pin14")
   val pin15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, "pin15")
   val pin16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "pin16")
+<<<<<<< HEAD
+  def setHigh(pins: List[GpioPin]): Unit = {
+    //Need to pass a list to set each pin high.
+    for (pin <- pins) gpio.high()
+  }
+
+  def setLow(pins: List[GpioPin]): Unit = {
+    for (pin <- pins) gpio.low()
+  }
+=======
+>>>>>>> cc21aea98c3facf56f7a654d8395afaf1267d247
 }
