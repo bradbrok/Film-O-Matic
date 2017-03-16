@@ -9,7 +9,7 @@ import scala.language.postfixOps
 class PlanSpec extends FlatSpec with Matchers {
 
   "A balanced Plan" should "report itself as balanced" in {
-    val plan = Plan(stages = List(
+    val plan1 = Plan(stages = List(
       Stage(bath = Some(Bath.A), steps = List(
         Step(Idle, duration = 5 seconds),
         Step(Fill, duration = 20 seconds),
@@ -20,15 +20,26 @@ class PlanSpec extends FlatSpec with Matchers {
         Step(Settle, duration = 5 seconds),
         Step(Reclaim, duration = 20 seconds),
         Step(Idle, duration = 5 seconds)
-      )),
-      Stage(bath = Some(Bath.B), steps = List(
-        Step(Fill, duration = 20 seconds),
-        Step(Settle, duration = 30 seconds, temperature = Some(42)),
-        Step(Agitate, duration = 10 seconds, temperature = Some(42)),
-        Step(Waste, duration = 20 seconds)
       ))
     ))
-    plan.isBalanced shouldBe true
+    plan1.isBalanced shouldBe true
   }
 
+  "A plan with no steps" should "report that it has no steps" in {
+    val plan2  = Plan(stages = List(
+      Stage(bath = Some(Bath.A), steps = Nil)
+    ))
+    plan2.isBalanced shouldBe true
+  }
+
+  "A plan that is imbalanced" should "report that it's impalanced" in {
+    val plan3 = Plan(stages = List(
+      Stage(bath = Some(Bath.A), steps = List(
+        Step(Waste, duration = 5 seconds),
+        Step(Agitate, duration = 5 seconds),
+        Step(Idle, duration = 5 seconds)
+      ))
+    ))
+    plan3.isBalanced shouldBe false
+  }
 }
