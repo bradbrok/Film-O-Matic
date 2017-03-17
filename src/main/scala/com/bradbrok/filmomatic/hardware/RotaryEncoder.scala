@@ -31,10 +31,13 @@ class RotaryEncoder(pinA: Int, pinB: Int) {
     if(currentRotationValue != previousRotationValue){
       rotationDelta = (previousRotationValue - currentRotationValue) % 4
       if(rotationDelta == 3){
-        steps += -1
+        steps += 1
+      }
+      else if(rotationDelta == -3){
+        steps -= 1
       }
       else{
-        steps += 1
+        steps -= rotationDelta
       }
     }
     previousRotationValue = currentRotationValue
