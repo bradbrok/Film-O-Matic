@@ -37,6 +37,7 @@ class RotaryEncoder(pinA: Int, pinB: Int) {
         steps += 1
       }
     }
+    previousRotationValue = currentRotationValue
   }
 }
 
