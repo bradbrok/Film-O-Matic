@@ -4,9 +4,6 @@ package com.bradbrok.filmomatic.hardware
   * @author bradbrok on 3/17/17.
   */
 object Position {
-  sealed trait Position{
-    def apply(input: Int): Position
-  }
   case object A extends Position {
     val position = 0
   }
@@ -19,4 +16,8 @@ object Position {
   case object D extends Position {
     val position = 2
   }
+}
+
+trait Position{
+  def apply(input: Int): Position
 }
