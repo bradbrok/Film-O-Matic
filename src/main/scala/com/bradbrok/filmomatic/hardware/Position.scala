@@ -30,12 +30,12 @@ object Position {
     val rightOf = C
   }
   case object C extends Position {
-    val input = 3
+    val input = 2
     val leftOf = B
     val rightOf = D
   }
   case object D extends Position {
-    val input = 2
+    val input = 3
     val leftOf = C
     val rightOf = A
   }
