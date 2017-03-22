@@ -1,6 +1,6 @@
-package com.bradbrok
+package com.bradbrok.filmomatic
 
-import com.pi4j.io.gpio.{GpioPinDigitalOutput, GpioFactory, GpioPin, RaspiPin}
+import com.pi4j.io.gpio.{GpioFactory, GpioPinDigitalOutput, RaspiPin}
 ;
 
 
@@ -9,6 +9,7 @@ import com.pi4j.io.gpio.{GpioPinDigitalOutput, GpioFactory, GpioPin, RaspiPin}
   */
 class GPIOInterface {
   val gpio = GpioFactory.getInstance()
+  //These pins I need to diagram out what's being used for what. Need to init some values for GPIO, I2C, and W1.
   val pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "pin1")
   val pin2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, "pin2")
   val pin3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, "pin3")

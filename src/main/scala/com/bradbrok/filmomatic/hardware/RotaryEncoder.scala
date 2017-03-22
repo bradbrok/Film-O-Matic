@@ -1,7 +1,5 @@
 package com.bradbrok.filmomatic.hardware
 
-import com.bradbrok.filmomatic.hardware.Position._
-
 /**
   * @author bradbrok on 3/16/17.
   */
@@ -11,8 +9,6 @@ case class RotaryEncoder(pinA: Int, pinB: Int) {
   var currentRotationValue: Int = 0
   var previousRotationValue: Int = 0
   var steps: Int = 0
-
-  def apply(pinA: Int, pinB: Int)
 
   /** Decode the current state and return Int value.
     *
