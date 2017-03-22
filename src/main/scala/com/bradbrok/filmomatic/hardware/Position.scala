@@ -1,5 +1,7 @@
 package com.bradbrok.filmomatic.hardware
 
+import com.bradbrok.filmomatic.hardware.Rotation._
+
 /**
   * @author bradbrok on 3/17/17.
   */
@@ -11,6 +13,7 @@ object Position {
     case 3 => C
   }
   sealed trait Position {
+    def input: Int
     def leftOf: Position
     def rightOf: Position
     def <(position: Position): Boolean = position == leftOf

@@ -1,5 +1,7 @@
 package com.bradbrok.filmomatic.hardware
 
+import com.bradbrok.filmomatic.hardware.Position._
+
 /**
   * @author bradbrok on 3/16/17.
   */
