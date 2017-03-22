@@ -12,6 +12,8 @@ case class RotaryEncoder(pinA: Int, pinB: Int) {
   var previousRotationValue: Int = 0
   var steps: Int = 0
 
+  def apply(pinA: Int, pinB: Int)
+
   /** Decode the current state and return Int value.
     *
     * @param pinA is either 1 or 0
