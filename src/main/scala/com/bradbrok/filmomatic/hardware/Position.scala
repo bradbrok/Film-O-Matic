@@ -3,9 +3,15 @@ package com.bradbrok.filmomatic.hardware
 /**
   * @author bradbrok on 3/17/17.
   */
-object Positions {
+object Position {
 
   sealed trait Position{
+    def apply(input: Int): Position = input match {
+      case 0 => A
+      case 1 => B
+      case 2 => D
+      case 3 => C
+    }
   }
 
   case object A extends Position {
