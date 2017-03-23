@@ -1,31 +1,31 @@
 package com.bradbrok.filmomatic
 
-import com.pi4j.io.gpio.{GpioFactory, GpioPinDigitalOutput, RaspiPin}
+import com.pi4j.io.w1.W1Master
+import com.pi4j.temperature.TemperatureScale
+import com.pi4j.io.gpio.{PinState, GpioFactory, GpioPinDigitalOutput, RaspiPin}
 ;
 
 
 /**
   * @author bradbrok on 1/25/17.
   */
-class GPIOInterface {
+case class GPIOInterface(shouldWork: Boolean){
   val gpio = GpioFactory.getInstance()
-  //These pins I need to diagram out what's being used for what. Need to init some values for GPIO, I2C, and W1.
-  val pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "pin1")
-  val pin2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, "pin2")
-  val pin3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, "pin3")
-  val pin4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "pin4")
-  val pin5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "pin5")
-  val pin6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "pin6")
-  val pin7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, "pin7")
-  val pin8 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_08, "pin8")
-  val pin9 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09, "pin9")
-  val pin10 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_10, "pin10")
-  val pin11 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_11, "pin11")
-  val pin12 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_12, "pin12")
-  val pin13 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_13, "pin13")
-  val pin14 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_14, "pin14")
-  val pin15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, "pin15")
-  val pin16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "pin16")
+  //GPIO for relay
+  val pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, "pin1", PinState.LOW)
+  val pin2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00, "pin2", PinState.LOW)
+  val pin3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, "pin3", PinState.LOW)
+  val pin4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, "pin4", PinState.LOW)
+  val pin5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_21, "pin5", PinState.LOW)
+  val pin6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_22, "pin6", PinState.LOW)
+  val pin7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_23, "pin7", PinState.LOW)
+  val pin8 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_24, "pin8", PinState.LOW)
+  //W1 for temp probe, need to look into pi4j-component.
+  val w1Master = new W1Master()
+  println(w1Master)
+
+
+  val pins = List(pin1, pin2, pin3, pin4, pin5, pin6, pin7, pin8)
 
   def setHigh(pins: List[GpioPinDigitalOutput]): Unit = {
     pins.foreach(_.high)
@@ -33,5 +33,9 @@ class GPIOInterface {
 
   def setLow(pins: List[GpioPinDigitalOutput]): Unit = {
     pins.foreach(_.low)
+  }
+
+  def getTemp: Unit = {
+
   }
 }

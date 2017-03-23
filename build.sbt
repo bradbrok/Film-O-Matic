@@ -2,7 +2,8 @@ import sbt.Keys._
 import sbt._
 
 lazy val commonDependencies = Seq(
-  "com.pi4j" % "pi4j-gpio-extension" % "1.1"
+  "com.pi4j" % "pi4j-gpio-extension" % "1.1",
+  "com.pi4j" % "pi4j-device" % "1.1"
 )
 
 lazy val `pi-ssd-1306-java` = (project in file("submodules/pi-ssd1306-java"))

@@ -13,29 +13,24 @@ object Position {
     case 3 => C
   }
   sealed trait Position {
-    def input: Int
     def leftOf: Position
     def rightOf: Position
     def <(position: Position): Boolean = position == leftOf
     def >(position: Position): Boolean = position == rightOf
   }
   case object A extends Position {
-    val input = 0
     val leftOf = D
     val rightOf = B
   }
   case object B extends Position {
-    val input = 1
     val leftOf = A
     val rightOf = C
   }
   case object C extends Position {
-    val input = 2
     val leftOf = B
     val rightOf = D
   }
   case object D extends Position {
-    val input = 3
     val leftOf = C
     val rightOf = A
   }
