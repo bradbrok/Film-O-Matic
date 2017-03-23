@@ -9,7 +9,7 @@ import com.bradbrok.filmomatic.hardware.Oled._
   * @author bradbrok on 1/23/17.
   */
 
-object FilmOmatic extends App {
+object Main extends App {
   override def main(args: Array[String]): Unit = {
       val oled = Oled
     }

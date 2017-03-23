@@ -2,6 +2,7 @@ package com.bradbrok.filmomatic
 
 import com.pi4j.io.w1.W1Master
 import com.pi4j.temperature.TemperatureScale
+import com.pi4j.component.temperature._
 import com.pi4j.io.gpio.{PinState, GpioFactory, GpioPinDigitalOutput, RaspiPin}
 ;
 
