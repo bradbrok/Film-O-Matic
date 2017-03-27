@@ -2,7 +2,7 @@ package com.bradbrok.filmomatic.hardware
 import java.awt.image.BufferedImage
 import eu.ondryaso.ssd1306.Display
 import com.pi4j.io.gpio.GpioFactory
-import com.pi4j.io.i2c.I2CFactory
+import com.pi4j.io.i2c._
 import java.awt._
 
 /**
@@ -11,7 +11,7 @@ import java.awt._
 
 case class Oled(shouldWork: Boolean){
   //Address space is usually 0x3C
-  val oled = new Display(128, 64, GpioFactory.getInstance(), I2CFactory.getInstance(1), 0x3C)
+  val oled = new Display(128, 64, GpioFactory.getInstance(), I2CFactory.getInstance(I2CBus.BUS_1), 0x3C)
   oled.begin()
   val imageSize = (128, 64)
   val canvas = new BufferedImage(imageSize._1, imageSize._2, BufferedImage.TYPE_INT_RGB)
