@@ -1,7 +1,6 @@
 package com.bradbrok.filmomatic
 
-import com.bradbrok.filmomatic._
-import com.bradbrok.filmomatic.hardware.Oled
+import com.bradbrok.filmomatic.{GPIOInterface => Gpio}
 import scala.concurrent.duration._
 
 /**
@@ -10,7 +9,7 @@ import scala.concurrent.duration._
 
 object Main extends App {
   override def main(args: Array[String]): Unit = {
-      val oled = Oled(true)
+      Gpio(true)
     }
   }
 
