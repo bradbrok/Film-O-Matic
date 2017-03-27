@@ -42,6 +42,4 @@ case class GPIOInterface(shouldWork: Boolean){
     pins.foreach(_.low)
   }
 
-  def getTemp(): Unit {
-  }
 }
