@@ -2,5 +2,6 @@
 *.iml
 project/
 target/
+out/
 *.swp
 .DST_Store

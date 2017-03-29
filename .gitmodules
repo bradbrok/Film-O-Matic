@@ -1,0 +1,3 @@
+[submodule "submodules/pi-ssd1306-java"]
+	path = submodules/pi-ssd1306-java
+	url = https://github.com/ondryaso/pi-ssd1306-java
