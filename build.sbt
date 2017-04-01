@@ -2,8 +2,8 @@ import deployssh.DeploySSH.ArtifactSSH
 import fr.janalyse.ssh.SSH
 
 lazy val commonDependencies = Seq(
-  "com.pi4j" % "pi4j-gpio-extension" % "1.0",
-  "com.pi4j" % "pi4j-device" % "1.0"
+  "com.pi4j" % "pi4j-gpio-extension" % "1.1",
+  "com.pi4j" % "pi4j-device" % "1.1"
 )
 
 lazy val akkaDependencies = Seq(
