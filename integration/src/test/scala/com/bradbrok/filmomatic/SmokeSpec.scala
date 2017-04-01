@@ -1,17 +1,15 @@
 package com.bradbrok.filmomatic
 
-import com.pi4j.io.gpio.{GpioFactory, RaspiPin, PinState}
+import com.pi4j.io.gpio.{RaspiPin, PinState}
 import org.scalatest.{FlatSpec, Matchers}
-import com.bradbrok.filmomatic.hardware.ProtocolInstance.gpio
+import com.bradbrok.filmomatic.hardware.GpioPins._
 
 class SmokeSpec extends FlatSpec with Matchers {
   "Reading pin state" should "not fail" in {
 
-    val pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, "Pin 2", PinState.HIGH)
+    val pin = pin1
 
     pin.setState(PinState.LOW)
-
-    println(pin, pin.isLow)
 
     pin.isLow should be(true)
   }
