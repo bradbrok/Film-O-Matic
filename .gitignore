@@ -1,6 +1,5 @@
 .idea/
 *.iml
-project/
 target/
 out/
 *.swp
