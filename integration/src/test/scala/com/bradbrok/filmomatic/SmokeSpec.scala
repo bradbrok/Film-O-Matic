@@ -32,8 +32,9 @@ class SmokeSpec extends FlatSpec with Matchers {
       }
     })
     while (true){
-      Thread sleep 100
+      Thread sleep 1000
       println(a, b)
+      if (a >= 1) a should be 1
     }
   }
 }
