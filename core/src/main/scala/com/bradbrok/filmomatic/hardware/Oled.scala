@@ -1,5 +1,6 @@
 package com.bradbrok.filmomatic.hardware
 
+import com.bradbrok.filmomatic.hardware.ProtocolInstance.i2c
 import java.awt._
 import java.awt.image.BufferedImage
 
@@ -11,8 +12,7 @@ import eu.ondryaso.ssd1306.Display
   */
 
 case class Oled(shouldWork: Boolean) {
-  val i2c = I2CFactory.getInstance(I2CBus.BUS_1)
-  println(i2c.getDevice(0x3c).getClass())
+  val device = i2c.getDevice(0x3c)
   //Address space is usually 0x3C
   val oled = new Display(128, 64, null, i2c, 0x3c)
   oled.begin()
