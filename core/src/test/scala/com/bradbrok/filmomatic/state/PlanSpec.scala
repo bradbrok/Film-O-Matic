@@ -42,4 +42,5 @@ class PlanSpec extends FlatSpec with Matchers {
     ))
     plan3.isBalanced shouldBe false
   }
+
 }

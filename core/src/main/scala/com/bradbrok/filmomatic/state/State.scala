@@ -2,32 +2,33 @@ package com.bradbrok.filmomatic.state
 
 import com.bradbrok.filmomatic.state.Direction._
 
+sealed trait State {
+  /**
+    * @return the desired pump [[Direction]]
+    */
+  def direction: Option[Direction]
+
+  /**
+    * @return valid possible subsequent [[State]] values
+    */
+  def canBecome: Set[State]
+
+  /**
+    * Determines if the next [[State]] is valid against
+    * the current one.
+    *
+    * @example
+    * {{{
+    * assert(Idle ~> Fill)      // Pass
+    * assert(Idle ~> Alternate) // Fail
+    * }}}
+    * @param next the subsequent value
+    * @return true if the subsequent is allowable
+    */
+  def ~>(next: State): Boolean = canBecome contains next
+}
+
 object State {
-  sealed trait State {
-    /**
-      * @return the desired pump [[Direction]]
-      */
-    def direction: Option[Direction]
-
-    /**
-      * @return valid possible subsequent [[State]] values
-      */
-    def canBecome: Set[State]
-
-    /**
-      * Determines if the next [[State]] is valid against
-      * the current one.
-      *
-      * @example
-      * {{{
-      * assert(Idle ~> Fill)      // Pass
-      * assert(Idle ~> Alternate) // Fail
-      * }}}
-      * @param next the subsequent value
-      * @return true if the subsequent is allowable
-      */
-    def ~>(next: State): Boolean = canBecome contains next
-  }
   case object Idle extends State {
     val direction = None
     val canBecome: Set[State] = Set(Idle, Fill)

@@ -1,6 +1,5 @@
 package com.bradbrok.filmomatic.state
 
-import com.bradbrok.filmomatic.state.Bath.Bath
 import com.bradbrok.filmomatic.state.Direction._
 
 import scala.concurrent.duration.Duration
